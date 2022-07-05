@@ -11,38 +11,38 @@
     />
   </head>
   <body>
-    <div>
-      <div
-        id="gameInputForm"
-        name="gameInputForm"
-        class="d-flex justify-content-center align-self-center pt-5"
-      >
-        <form>
-          <p>Please enter your games separated by a space:</p>
-          <textarea
-            id="gameinput"
-            name="gameinput"
-            cols="50"
-            rows="10"
-          ></textarea>
-          <br />
-          <button type="button" class="btn btn-primary" onclick="pickGame()">
-            Submit
-          </button>
-        </form>
-        <br>
-        <br>
+    <div
+      id="gameInputForm"
+      name="gameInputForm"
+      class="d-flex justify-content-center align-self-center pt-5"
+    >
+      <form>
+        <h3>Please enter your games separated by a space:</h3>
+        <textarea
+          id="gameinput"
+          name="gameinput"
+          cols="50"
+          rows="10"
+        ></textarea>
+        <br />
+        <br />
+        <button type="button" class="btn btn-primary" onclick="pickGame()">
+          Submit
+        </button>
+        <br />
+        <br />
         <div id="gameDisplay" name="gameDisplay">
-          <p id="gameDisplayText" name="gameDisplayText"></p>
+          <h5 id="gameDisplayText" name="gameDisplayText"></h5>
         </div>
-      </div>
+      </form>
     </div>
     <script type="text/javascript">
       function pickGame() {
         let gamesList = [];
         gamesList = document.getElementById("gameinput").value;
         gamesList = gamesList.split(/\r?\n/);
-        let gameSelected = gamesList[Math.floor(Math.random()*gamesList.length)]
+        let gameSelected =
+          gamesList[Math.floor(Math.random() * gamesList.length)];
         document.getElementById("gameDisplayText").innerHTML =
           "Play: " + gameSelected;
       }
