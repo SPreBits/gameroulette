@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="UTF-8" />
+  <head>
+    <title>Game Roulette</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="position-relative">
+      <div
+        id="gameInputForm"
+        name="gameInputForm"
+        class="position-absolute top-0 start-50"
+      >
+        <form>
+          <p>Please enter your games separated by a space:</p>
+          <textarea
+            id="gameinput"
+            name="gameinput"
+            cols="50"
+            rows="10"
+          ></textarea>
+          <br />
+          <button type="button" class="btn btn-primary" onclick="pickGame()">
+            Submit
+          </button>
+        </form>
+        <br>
+        <br>
+        <div id="gameDisplay" name="gameDisplay">
+          <p id="gameDisplayText" name="gameDisplayText"></p>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      function pickGame() {
+        let gamesList = [];
+        gamesList = document.getElementById("gameinput").value;
+        document.getElementById("gameDisplayText").innerHTML =
+          "Play: " + gamesList;
+      }
+    </script>
+  </body>
+</html>
